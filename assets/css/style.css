@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: #EEEEEE;
+}
+
+
+
+/* TOPBAR */
+.topbar {
+  background-color: #CF2B2B;
+  width: 100%;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  
+}
+
+.content {
+  margin-top: 62px; /* 62px IS ON THE EDGE OF TOPBAR */
+  padding: 0 4%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.topbar img {
+  max-height: 50px;
+  height: auto;
+  width: auto;
+  margin-left: 20px;
+}
+
+/* CONTENT */
+
+.selected {
+  border: 2px solid green;
+}
+
+fieldset {
+  
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.food-title, .drink-title, .dessert-title, .address-title, .address-field {
+  font-family: 'Righteous';
+  font-size: 14px;
+}
+
+.address-title {
+  color: #CF2B2B;
+}
+
+.container {
+  display: flex;
+  gap: 10px; /* GAP BETWEEN EACH PRODUCT */
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+  margin-top: 2%;
+}
+
+
+
+.product {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10%;
+  flex-shrink: 0;
+  padding: 5px 0;
+  gap: 4px;
+  cursor: pointer;
+  /* THE GAP ONLY APPLIES TO DRINK AND DESSERT SECTION
+  GAP BETWEEN .PRODUCT IMG AND .PLATE 
+  HAPPENS BECAUSE IN FOOD SECTION THE ELEMENTS ARE ENCAPSULATED IN .PRODUCT-INFO */
+ }
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px; /* GAP BETWEEN ELEMENTS IN .PRODUCT (IMG, PLATE, DESCRIPTION) (FOOD SECTION) */
+}
+
+.product img {
+  height: 50px;
+  width: 90px;
+  border-radius: 10%;
+}
+
+
+.plate {
+  font-weight: bold;
+  font-family: 'Roboto';
+  font-size: 11px;
+  color: #333333;  
+  text-align: center;
+}
+
+.description {
+  font-family: 'Roboto';
+  font-size: 9px;
+  color: #A6A6A6;
+  text-align: center;
+}
+
+section {
+  margin: 2% 0; /* MARGIN BETWEEN EACH SECTION  */
+}
+
+
+
+.send {
+  background-image: url('../media/wpp.webp');
+  background-position: center;
+  background-size: cover;
+  width: 30%;
+  height: 50px;
+  margin-bottom: 35px;
+}
+
+
+.bottombar {
+  background-color: #CF2B2B;
+  width: 100%;
+  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22px;
+  padding: 10px 0;
+}

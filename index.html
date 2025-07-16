@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>MealMaker</title>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div>
+            <img src="assets/media/logo.png" alt="">
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <!-- FOOD SECTION -->
+        <section class="food">
+
+            <!-- FOOD SELECT -->
+            <div class="food-title">
+                <p>Fist of all, your food</p>
+            </div>
+
+
+            <div class="container">
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/fishnchips.webp" alt="">
+                        <p class="plate">Fish 'n' Chips</p>
+                        <p class="description">Classic English dish with crispy fried fish and golden fries</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/burger.webp" alt="">
+                        <p class="plate">Bourbon Burger</p>
+                        <p class="description">Smoked burger with brie, caramelized onions, bourbon sauce and fries</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/chicken.png" alt="">
+                        <p class="plate">Homestyle Chicken</p>
+                        <p class="description">A comforting plate of juicy chicken, fries and fresh greens</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/fishnchips.webp" alt="">
+                        <p class="plate">Fish 'n' Chips</p>
+                        <p class="description">Classic English dish with crispy fried fish and golden fries</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/burger.webp" alt="">
+                        <p class="plate">Bourbon Burger</p>
+                        <p class="description">Smoked burger with brie, caramelized onions, bourbon sauce and fries</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="chooseFood(this)">
+                    <div class="product-info">
+                        <img src="assets/media/chicken.png" alt="">
+                        <p class="plate">Homestyle Chicken</p>
+                        <p class="description">A comforting plate of juicy chicken, fries and fresh greens</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- DRINK SECTION -->
+        <section class="drink">
+
+            <!-- DRINK SELECT -->
+            <div class="drink-title">
+                <p>Now your drink</p>
+            </div>
+
+            <div class="container">
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink1.webp" alt="">
+                    <p class="plate">Coke</p>
+                </div>
+
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink2.avif" alt="">
+                    <p class="plate">Coke Zero</p>
+                </div>
+
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink1.webp" alt="">
+                    <p class="plate">Coke</p>
+                </div>
+
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink2.avif" alt="">
+                    <p class="plate">Coke Zero</p>
+                </div>
+
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink1.webp" alt="">
+                    <p class="plate">Coke</p>
+                </div>
+
+                <div class="product" onclick="chooseDrink(this)">
+                    <img src="assets/media/drink2.avif" alt="">
+                    <p class="plate">Coke Zero</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DESSERT SECTION -->
+        <section class="dessert">
+
+            <!-- DESSERT SELECT -->
+            <div class="dessert-title">
+                <p>Finally your dessert</p>
+            </div>
+
+            <div class="container">
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert1.jpg" alt="">
+                    <p class="plate">Chocolate Cake</p>
+                </div>
+
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert2.jpg" alt="">
+                    <p class="plate">Pink Glazed Donut</p>
+                </div>
+
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert1.jpg" alt="">
+                    <p class="plate">Chocolate Cake</p>
+                </div>
+
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert2.jpg" alt="">
+                    <p class="plate">Pink Glazed Donut</p>
+                </div>
+
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert1.jpg" alt="">
+                    <p class="plate">Chocolate Cake</p>
+                </div>
+
+                <div class="product" onclick="chooseDessert(this)">
+                    <img src="assets/media/dessert2.jpg" alt="">
+                    <p class="plate">Pink Glazed Donut</p>
+                </div>
+
+
+            </div>
+            </div>
+        </section>
+
+
+        <section class="whatsapp">
+            <p class="address-field">SEND ORDER BY WHATSAPP</p>
+            <button class="send" id="send" onclick="sendOrder()"></button>
+            </button>
+        </section>
+    </main>
+
+
+
+
+    <footer class="bottombar">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="settings-outline"></ion-icon>
+    </footer>
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
