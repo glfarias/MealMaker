@@ -37,7 +37,7 @@ body {
   padding: 0 4%;
   display: flex;
   flex-direction: column;
-  
+  padding-bottom: 55px;  
 }
 
 .topbar img {
@@ -53,107 +53,102 @@ body {
   border: 2px solid green;
 }
 
-fieldset {
-  
-  margin-top: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 .food-title, .drink-title, .dessert-title, .address-title, .address-field {
   font-family: 'Righteous';
-  font-size: 14px;
-}
-
-.address-title {
-  color: #CF2B2B;
+  font-size: 20px;
 }
 
 .container {
   display: flex;
-  gap: 10px; /* GAP BETWEEN EACH PRODUCT */
+  gap: 10px; /* GAP BETWEEN EACH PRODUCT (INLINE PRODUCTS, GAP FROM FOOD TO FOOD, DRINK TO DRINK...)*/
   overflow-x: scroll;
   flex-wrap: nowrap;
   scrollbar-width: none;
-  margin-top: 2%;
+  margin-top: 10px;
 }
-
-
 
 .product {
   width: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: white;
   border-radius: 10%;
   flex-shrink: 0;
-  padding: 5px 0;
-  gap: 4px;
+  padding: 10px 5px;
   cursor: pointer;
-  /* THE GAP ONLY APPLIES TO DRINK AND DESSERT SECTION
-  GAP BETWEEN .PRODUCT IMG AND .PLATE 
-  HAPPENS BECAUSE IN FOOD SECTION THE ELEMENTS ARE ENCAPSULATED IN .PRODUCT-INFO */
  }
 
 .product-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px; /* GAP BETWEEN ELEMENTS IN .PRODUCT (IMG, PLATE, DESCRIPTION) (FOOD SECTION) */
+  justify-content: space-between;
+  height: 100%;
 }
 
-.product img {
+.product-info div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price {
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.product-info img {
+  width: 100%;
   height: 50px;
-  width: 90px;
+  
   border-radius: 10%;
 }
 
 
 .plate {
-  font-weight: bold;
   font-family: 'Roboto';
-  font-size: 11px;
+  font-size: 12px;
   color: #333333;  
   text-align: center;
 }
 
 .description {
   font-family: 'Roboto';
-  font-size: 9px;
+  font-size: 10px;
   color: #A6A6A6;
   text-align: center;
 }
 
 section {
-  margin: 2% 0; /* MARGIN BETWEEN EACH SECTION  */
+  margin: 1% 0; /* MARGIN BETWEEN EACH SECTION  */
 }
 
 
 
 .send {
-  background-image: url('../media/wpp.webp');
-  background-position: center;
-  background-size: cover;
-  width: 30%;
-  height: 50px;
-  margin-bottom: 35px;
+  width: 100%;
+  background-color: grey;
+  border-radius: 50px;
+  font-family: 'Righteous';
 }
 
+.send:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
 
 .bottombar {
   background-color: #CF2B2B;
   width: 100%;
-  
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 0;
-
+  z-index: 1;
+  padding: 6px 5px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  font-size: 22px;
-  padding: 10px 0;
+  justify-content: center;
+
 }

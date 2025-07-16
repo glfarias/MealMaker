@@ -64,7 +64,7 @@ function chooseFood(element) {
             P
                 NAME OF THE DISH
     */
-    food = element.querySelector('div p').innerHTML;
+    food = element.querySelector('.plate').innerHTML;
 
     /*
     NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
@@ -105,7 +105,7 @@ function chooseDrink(element) {
             NAME OF THE DRINK
             
     */
-    drink = element.querySelector('p').innerHTML;
+    drink = element.querySelector('.plate').innerHTML;
 
     /*
     NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
@@ -144,7 +144,7 @@ function chooseDessert(element) {
             NAME OF THE DESSERT
             
     */
-    dessert = element.querySelector('p').innerHTML;
+    dessert = element.querySelector('.plate').innerHTML;
 
     /*
     NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
