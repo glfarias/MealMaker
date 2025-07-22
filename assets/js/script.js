@@ -24,9 +24,16 @@ function sendOrder() {
 }
 
 
-
-
-
+function checkOrderComplete() {
+    if (food && drink && dessert) {
+        let sendbutton = document.querySelector(".send");
+        sendbutton.disabled = false;
+        sendbutton.classList.add("active");
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 /*
@@ -73,7 +80,8 @@ function chooseFood(element) {
     element.classList.toggle('selected');
     
     
-    console.log(food)
+    console.log(food);
+    checkOrderComplete();
 }
 
 let drink;
@@ -113,6 +121,7 @@ function chooseDrink(element) {
     */
     element.classList.toggle('selected');
     console.log(drink);
+    checkOrderComplete();
 }
 
 
@@ -154,4 +163,5 @@ function chooseDessert(element) {
 
 
     console.log(dessert);
+    checkOrderComplete();
 }
