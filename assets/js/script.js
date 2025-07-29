@@ -1,167 +1,124 @@
-let customer;
-let address;
-function sendOrder() {
-
-    customer = prompt("Please, what is your name?");
-    address = prompt("What is the address we should delivery?")
-
-
-    /*
-    
-    GOTTA IMPROVE THIS IF BY:
-    1. REMOVING !== UNDEFINED, BECAUSE WE ARE ALREADY CONTROLLING THAT THERE IS 3 PRODUCTS SELECTED
-    2. WORKING ON BETTER ALERTS, TO INFORM CUSTOMER WHAT IS MISSING
-        (SELECT FOOD? SELECT DRINK? SELECT DESSERT? TYPE NAME? TYPE ADDRES?)
-    
-    */
-    if (food!==undefined && drink!==undefined && dessert!==undefined && customer && address && document.querySelectorAll('.selected').length == 3) {
-        let message;
-        message = `Hello! I'd like to order:\n- ${food}\n- ${drink}\n- ${dessert}\n${customer}\n${address}`;
-        window.open("https://wa.me/+34123456789?text="+encodeURIComponent(message));
-    } else {
-        alert("Fill all the fields, please!")
+const order = {
+    food : { 
+        name : null,
+        price : null
+    },
+    drink : {
+        name : null,
+        price : null
+    }, 
+    dessert : {
+        name : null,
+        price : null
     }
 }
 
+let customer;
+let address;
+
+const buttonConfirm = document.getElementById("button-confirm");
+const buttonGoBack = document.getElementById("button-goback");
+
+buttonConfirm.addEventListener('click', () => {
+    sendOrder();
+});
+
+buttonGoBack.addEventListener('click', () => {
+    const popUp = document.querySelector(".popup-container");
+    popUp.style.display = "none";
+})
+
+function totalPrice() {
+    return `${(parseFloat(order.food.price) + parseFloat(order.drink.price) + parseFloat(order.dessert.price)).toFixed(2)}€`;
+}
+
+function sendOrder() {
+    customer = prompt("Please, what is your name?");
+    address = prompt("What is the address we should delivery?")
+
+    if (customer && address && document.querySelectorAll('.selected').length == 3) {
+        let message = `Hello! I'd like to order:\n- ${order.food.name} (${order.food.price})\n- ${order.drink.name} (${order.drink.price})\n- ${order.dessert.name} (${order.dessert.price})\n*TOTAL: ${totalPrice()}*\n\nMy name is ${customer.trim()}\nPlease deliver to ${address.trim()}`;
+        window.open("https://wa.me/14155238886?text="+encodeURIComponent(message));
+    } else {
+        alert("Both name and address fields are required, please try again.")
+    }
+}
 
 function checkOrderComplete() {
-    if (food && drink && dessert) {
-        let sendbutton = document.querySelector(".send");
-        sendbutton.disabled = false;
-        sendbutton.classList.add("active");
+    if (order.food.name && order.drink.name && order.dessert.name) {
+        let sendButton = document.querySelector(".send");
+        sendButton.disabled = false;
+        sendButton.classList.add("active");
         return true;
     } else {
         return false;
     }
 }
 
-
-/*
-GRABBING THE NAME OF
-FOOD, DRINK, DESSERT
-VVVVVVVVVVVVVVVVVVVV
-*/
-
-let food;
 function chooseFood(element) {
-
-    /*
-    THIS FUNCTION IS CALLED EVERYTIME
-    CUSTOMER CLICKS ON A FOOD
-    */
-
-
-    /*
-    FIRST WE CHECK IF THERE IS A FOOD ALREADY SELECTED
-    IF YES, WE REMOVE THE CLASS SELECTED FROM IT
-    */
-    if (food) {
+    if (order.food.name && order.food.price) {
         let entireFoodSection = document.querySelector('.food .container');
         let elementSelected = entireFoodSection.querySelector(".selected");
         elementSelected.classList.remove("selected");
     }
     
-    /*
-    ELEMENT IS THE DIV WITH CLASS PRODUCT
-    NOW WE STORE IN food THE INNERHTML OF THE P INSIDE THE DIV
-    (THAT INNERHTML IS THE NAME OF THE PLATE)
-    THIS STRUCTURE:
-    ELEMENT
-        DIV
-            P
-                NAME OF THE DISH
-    */
-    food = element.querySelector('.plate').innerHTML;
+    order.food.name = element.querySelector('.plate').innerHTML;
+    order.food.price = element.querySelector('.price').innerHTML;
 
-    /*
-    NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
-    SO IT GLOWS GREEN
-    */
     element.classList.toggle('selected');
-    
-    
-    console.log(food);
+    console.log(order.food.name, order.food.price);
     checkOrderComplete();
 }
 
-let drink;
 function chooseDrink(element) {
-
-    /*
-    THIS FUNCTION IS CALLED EVERYTIME
-    CUSTOMER CLICKS ON A FOOD
-    /*
-
-
-    /*
-    FIRST WE CHECK IF THERE IS A DRINK ALREADY SELECTED
-    IF YES, WE REMOVE THE CLASS SELECTED FROM IT
-    */
-    if (drink) {
+    if (order.drink.name && order.drink.price) {
         let entireDrinkSection = document.querySelector('.drink .container');
         let elementSelected = entireDrinkSection.querySelector(".selected");
         elementSelected.classList.remove("selected");
     }
 
-    /*
-    ELEMENT IS THE DIV WITH CLASS PRODUCT
-    NOW WE STORE IN drink THE INNERHTML OF THE P INSIDE THE ELEMENT
-    (THAT INNERHTML IS THE NAME OF THE DRINK)
-    THIS STRUCTURE:
-    ELEMENT
-        P
-            NAME OF THE DRINK
-            
-    */
-    drink = element.querySelector('.plate').innerHTML;
+    order.drink.name = element.querySelector('.plate').innerHTML;
+    order.drink.price = element.querySelector('.price').innerHTML;
 
-    /*
-    NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
-    SO IT GLOWS GREEN
-    */
     element.classList.toggle('selected');
-    console.log(drink);
+    console.log(order.drink.name, order.drink.price);
     checkOrderComplete();
 }
 
-
-let dessert;
 function chooseDessert(element) {
-
-    /*
-    THIS FUNCTION IS CALLED EVERYTIME
-    CUSTOMER CLICKS ON A DESSERT
-    /*
-
-    /*
-    FIRST WE CHECK IF THERE IS A DESSERT ALREADY SELECTED
-    IF YES, WE REMOVE THE CLASS SELECTED FROM IT
-    */
-    if (dessert) {
+    if (order.dessert.name && order.dessert.price) {
         let entireDessertSection = document.querySelector('.dessert .container');
         let elementSelected = entireDessertSection.querySelector(".selected");
         elementSelected.classList.remove("selected");
     }
 
-    /*
-    ELEMENT IS THE DIV WITH CLASS PRODUCT
-    NOW WE STORE IN dessert THE INNERHTML OF THE P INSIDE THE ELEMENT
-    (THAT INNERHTML IS THE NAME OF THE DESSERT)
-    THIS STRUCTURE:
-    ELEMENT
-        P
-            NAME OF THE DESSERT
-            
-    */
-    dessert = element.querySelector('.plate').innerHTML;
+    order.dessert.name = element.querySelector('.plate').innerHTML;
+    order.dessert.price = element.querySelector('.price').innerHTML;
 
-    /*
-    NOW WE FINALLY SET THE CLASS SELECTED TO THAT ELEMENT
-    SO IT GLOWS GREEN
-    */
     element.classList.toggle('selected');
-
-
-    console.log(dessert);
+    console.log(order.dessert.name, order.dessert.price);
     checkOrderComplete();
+}
+
+function showPopUp() {
+    const details = document.querySelectorAll(".popup-details div");
+    const categories = ['food', 'drink', 'dessert']
+    // const totalPrice = parseFloat(order.food.price) + parseFloat(order.drink.price) + parseFloat(order.dessert.price);
+
+    for (let i = 0 ; i < categories.length ; i++) {
+        const item = order[categories[i]]
+        details[i].innerHTML =
+        `
+        <p>${item.name}</p>
+        <p>${item.price}</p>
+        `;
+    }
+
+    details[details.length - 1].innerHTML =
+    `
+    <p>TOTAL: </p>
+    <p>${totalPrice()}</p>
+    `;
+    const popUp = document.querySelector(".popup-container");
+    popUp.style.display = "block";
 }

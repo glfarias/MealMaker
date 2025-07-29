@@ -47,7 +47,7 @@
                             <p class="description">Classic English dish with crispy fried fish and fries</p>
                         </div>
                         <div>
-                            <p class="price">12,90€</p>
+                            <p class="price">12.90€</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                             <p class="description">Brie, caramelized onions, bourbon sauce and fries</p>
                         </div>
                         <div>
-                            <p class="price">11,50€</p>
+                            <p class="price">11.50€</p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                             <p class="description">Comforting crispy chicken, fries and fresh greens</p>
                         </div>
                         <div>
-                            <p class="price">10,50€</p>
+                            <p class="price">10.50€</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                             <p class="description">Classic English dish with crispy fried fish and fries</p>
                         </div>
                         <div>
-                            <p class="price">12,90€</p>
+                            <p class="price">12.90€</p>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <p class="description">Brie, caramelized onions, bourbon sauce and fries</p>
                         </div>
                         <div>
-                            <p class="price">11,50€</p>
+                            <p class="price">11.50€</p>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <p class="description">Comforting crispy chicken, fries and fresh greens</p>
                         </div>
                         <div>
-                            <p class="price">10,50€</p>
+                            <p class="price">10.50€</p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                             <p class="plate">Coke</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                             <p class="plate">Coke Zero</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                             <p class="plate">Coke</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
                             <p class="plate">Coke Zero</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                             <p class="plate">Coke</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                             <p class="plate">Coke Zero</p>
                         </div>
                         <div>
-                            <p class="price">2€</p>
+                            <p class="price">2.00€</p>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                             <p class="plate">Chocolate Cake</p>
                         </div>
                         <div>
-                            <p class="price">1,50€</p>
+                            <p class="price">1.50€</p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                             <p class="plate">Pink Donut</p>
                         </div>
                         <div>
-                            <p class="price">1,20€</p>
+                            <p class="price">1.20€</p>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                             <p class="plate">Chocolate Cake</p>
                         </div>
                         <div>
-                            <p class="price">1,50€</p>
+                            <p class="price">1.50€</p>
                         </div>
                     </div>
                 </div>
@@ -263,7 +263,7 @@
                             <p class="plate">Pink Donut</p>
                         </div>
                         <div>
-                            <p class="price">1,20€</p>
+                            <p class="price">1.20€</p>
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                             <p class="plate">Chocolate Cake</p>
                         </div>
                         <div>
-                            <p class="price">1,50€</p>
+                            <p class="price">1.50€</p>
                         </div>
                     </div>
                 </div>
@@ -287,7 +287,7 @@
                             <p class="plate">Pink Donut</p>
                         </div>
                         <div>
-                            <p class="price">1,20€</p>
+                            <p class="price">1.20€</p>
                         </div>
                     </div>
 
@@ -300,8 +300,27 @@
     </main>
 
     <footer class="bottombar">
-        <button disabled class="send" id="send" onclick="sendOrder()">SEND ORDER</button>
+        <button disabled class="send" id="send" onclick="showPopUp()">SEND ORDER</button>
     </footer>
+
+    <div class="popup-container">
+        <div class="popup">
+            <p class="popup-title">REVIEW YOUR ORDER</p>
+
+            <div class="popup-details">
+                <!-- Dinamically implemented by Js -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
+            <div class="button-container">
+                <button id="button-confirm" class="button-confirm">CONFIRM</button>
+                <button id="button-goback" class="button-goback">BACK</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="assets/js/script.js"></script>
