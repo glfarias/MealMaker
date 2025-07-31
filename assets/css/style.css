@@ -11,7 +11,6 @@
     box-sizing: border-box;
 }
 
-
 a, a:visited {
   color: inherit;
   text-decoration: none;
@@ -19,44 +18,37 @@ a, a:visited {
 
 body {
   background-color: #EEEEEE;
+  font-size: 1em;
+}
+
+.selected {
+  border: 2px solid green;
 }
 
 /* TOPBAR */
+
 .topbar {
-  background-image: linear-gradient(to left, #7a1414, #CF2B2B, #F75C5C);
-  width: 100%;
-  
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
-
-  padding: 5px 0;
+  background-image: linear-gradient(to left, #7a1414, #CF2B2B, #F75C5C);
   display: flex;
-  align-items: center;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.content {
-  margin-top: 62px; /* 62px IS ON THE EDGE OF TOPBAR */
-  padding: 0 4%;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 75px;  
+  width: 100%;
 }
 
 .topbar img {
-  max-height: 50px;
-  height: auto;
-  width: auto;
-  margin-left: 20px;
+  height: 60px;
+  margin: 5px 2%;
 }
 
 /* CONTENT */
 
-.selected {
-  border: 2px solid green;
+.content {
+  margin: 80px 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .food-title, .drink-title, .dessert-title, .address-title, .address-field {
@@ -84,8 +76,8 @@ body {
  }
 
  .product:hover {
-  transform: scale(0.99);
-  transition: transform .5s ease;
+  transform: scale(0.97);
+  transition: transform .3s ease;
  }
 
 .product-info {
@@ -102,14 +94,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px; /* BETWEEN .PLATE AND .DESCRIPTION */
-  
-}
-
-.price {
-  color: green;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Roboto';
 }
 
 .product-info img {
@@ -118,7 +102,6 @@ body {
   object-fit: cover;
   border-radius: 10%;
 }
-
 
 .plate {
   font-family: 'Roboto';
@@ -134,48 +117,49 @@ body {
   text-align: center;
 }
 
-.check {
-  font-size: 18px;
+.price {
   color: green;
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(0, 111, 0, 0.777);
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }
 
-section {
-  margin: 1% 0;
+/* BOTTOM BAR */
+
+.bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to left, #CF2B2B, #F75C5C);
+  display: flex;
+  width: 100%;
+  height: 70px;
+  padding: 10px 10px;
 }
 
 .send {
-  width: 100%;
-  height: 100%;
-  background-color: grey;
-  color: #000000;
+  font-family: 'Righteous';
   font-size: 22px;
   font-weight: bold;
-  border-radius: 50px;
-  font-family: 'Righteous';
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  background-color: grey;
   border: 1px solid black;
+  border-radius: 50px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
 .send.active {
   cursor: pointer;
+  border: 2px solid black;
   background-color: yellow;
-  animation: bounce .5s linear;
+  animation: bounce .75s linear;
   transition: background-color 2s ease-in;
 }
 
-.bottombar {
-  background: linear-gradient(to left, #CF2B2B, #F75C5C);
-  width: 100%;
-  height: 70px;
-  padding: 10px 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-}
+/* POPUP */
 
 .popup-container {
   position: fixed;
@@ -193,15 +177,15 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 360px;
-  min-height: 400px;
   background-image: linear-gradient(to top, #7a1414f0, #cf2b2bf0);
   display: flex;
+  width: 99%;
+  max-width: 350px;
+  height: 350px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-radius: 50px;
-  
 }
 
 .popup-title {
@@ -213,48 +197,47 @@ section {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 90%;
+  width: 95%;
 }
 
 .popup-details div {
   display: flex;
   justify-content: space-between;
-  font-family: 'Righteous';
-  font-size: 1.5em;
+  font-family: 'Roboto';
+  font-size: 1.6em;
   color: #000000;
+}
+
+.popup-details div:last-child {
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 95%;
   gap: 5px;
 }
 
-.button-confirm {
-  width: 65%;
+.button-confirm, .button-goback {
   height: 50px;
   color: #000000;
   font-size: 22px;
   font-weight: bold;
   border-radius: 50px;
   font-family: 'Righteous';
-  border: 1px solid black;
+  border: 2px solid black;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+
+.button-confirm {
+  width: 65%;
   background-color: yellow;
 }
 
 .button-goback {
   width: 35%;
-  height: 50px;
   background-color: darkgrey;
-  color: #000000;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius: 50px;
-  font-family: 'Righteous';
-  border: 1px solid black;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
 }
