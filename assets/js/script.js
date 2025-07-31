@@ -62,8 +62,8 @@ function choose(event) {
             // EVERYTHING BELOW WILL RUN ONLY ONCE
 
             // CHECK IF THERE IS AN ELEMENT SELECTED, IF YES REMOVES THE CLASS SELECTED FROM IT
-            containerOfSectionClicked = sectionClicked.querySelector('.container');
-            elementSelected = containerOfSectionClicked.querySelector('.selected');
+            const containerOfSectionClicked = sectionClicked.querySelector('.container');
+            const elementSelected = containerOfSectionClicked.querySelector('.selected');
             if (elementSelected) {
                 elementSelected.classList.remove('selected');
             }
