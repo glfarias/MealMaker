@@ -13,9 +13,6 @@ const order = {
     }
 }
 
-let customer;
-let address;
-
 const buttonConfirm = document.getElementById("button-confirm");
 const buttonGoBack = document.getElementById("button-goback");
 const allProducts = document.querySelectorAll('.product');
@@ -61,7 +58,7 @@ function choose(event) {
         if (sectionClicked.classList.contains(`${categories[i]}`)) {
             // EVERYTHING BELOW WILL RUN ONLY ONCE
 
-            // CHECK IF THERE IS AN ELEMENT SELECTED, IF YES REMOVES THE CLASS SELECTED FROM IT
+            // CHECK IF THERE IS AN ELEMENT SELECTED AND REMOVES THE CLASS SELECTED FROM IT
             const containerOfSectionClicked = sectionClicked.querySelector('.container');
             const elementSelected = containerOfSectionClicked.querySelector('.selected');
             if (elementSelected) {
@@ -84,7 +81,6 @@ function choose(event) {
 function showPopUp() {
     const details = document.querySelectorAll(".popup-details div");
     const categories = ['food', 'drink', 'dessert']
-    // const totalPrice = parseFloat(order.food.price) + parseFloat(order.drink.price) + parseFloat(order.dessert.price);
 
     for (let i = 0 ; i < categories.length ; i++) {
         const item = order[categories[i]]
@@ -97,21 +93,24 @@ function showPopUp() {
 
     details[details.length - 1].innerHTML =
     `
-    <p>TOTAL: </p>
+    <p>TOTAL </p>
     <p>${totalPrice()}</p>
     `;
+
     const popUp = document.querySelector(".popup-container");
     popUp.style.display = "block";
 }
 
 function sendOrder() {
-    customer = prompt("Please, what is your name?");
-    address = prompt("What is the address we should delivery?")
+    const customer = document.getElementById('customer').value;
+    const address = document.getElementById('address').value;
 
     if (customer && address && document.querySelectorAll('.selected').length == 3) {
         let message = `Hello! I'd like to order:\n- ${order.food.name} (${order.food.price})\n- ${order.drink.name} (${order.drink.price})\n- ${order.dessert.name} (${order.dessert.price})\n*TOTAL: ${totalPrice()}*\n\nMy name is ${customer.trim()}\nPlease deliver to ${address.trim()}`;
         window.open("https://wa.me/14155238886?text="+encodeURIComponent(message));
     } else {
-        alert("Both name and address fields are required, please try again.")
-    }
+        const requiredText = document.getElementById('required-text');
+        requiredText.textContent = '';
+        requiredText.textContent = 'Both name and address fields are required';
+        }
 }
