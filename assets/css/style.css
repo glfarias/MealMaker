@@ -1,9 +1,9 @@
 @keyframes bounce {
-  0%, 50%, 100% {
-    transform: translateY(0);
+  0%, 30%, 60%, 100% {
+    transform: scale(1);
   }
-  25%, 75%{
-    transform: translateY(-10px);
+  15%, 45%, 75% {
+    transform: scale(1.07);
   }
 }
 
@@ -155,7 +155,7 @@ body {
   cursor: pointer;
   border: 2px solid black;
   background-color: yellow;
-  animation: bounce .75s linear;
+  animation: bounce 1s linear;
   transition: background-color 2s ease-in;
 }
 
