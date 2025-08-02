@@ -35,7 +35,7 @@ cd MealMaker
 
 ---
 
-✨ FEATURES
+**✨ FEATURES**
 - Choose one item per category (main dish, drink, dessert)
 - Visual confirmation of selected products
 - Prevents multiple selections per category (replaces previous choice)
