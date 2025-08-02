@@ -16,6 +16,13 @@ const order = {
 const buttonConfirm = document.getElementById("button-confirm");
 const buttonGoBack = document.getElementById("button-goback");
 const allProducts = document.querySelectorAll('.product');
+const allContainers = document.querySelectorAll('.container');
+
+allContainers.forEach((container) => {
+    container.addEventListener('scroll', () => {
+        setInterval(() => {document.getElementById('hint').style.display = "none";}, 1500);
+    })
+})
 
 allProducts.forEach((product) => {
     product.addEventListener('click', choose)
@@ -23,7 +30,7 @@ allProducts.forEach((product) => {
 
 buttonConfirm.addEventListener('click', () => {
     sendOrder();
-});
+})
 
 buttonGoBack.addEventListener('click', () => {
     const popUp = document.querySelector(".popup-container");
