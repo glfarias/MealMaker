@@ -13,10 +13,11 @@ const order = {
     }
 }
 
+const sendButton = document.getElementById("send");
 const buttonConfirm = document.getElementById("button-confirm");
 const buttonGoBack = document.getElementById("button-goback");
-const allProducts = document.querySelectorAll('.product');
 const allContainers = document.querySelectorAll('.container');
+const allProducts = document.querySelectorAll('.product');
 
 allContainers.forEach((container) => {
     container.addEventListener('scroll', () => {
@@ -28,9 +29,9 @@ allProducts.forEach((product) => {
     product.addEventListener('click', choose)
 })
 
-buttonConfirm.addEventListener('click', () => {
-    sendOrder();
-})
+sendButton.addEventListener('click', showPopUp)
+
+buttonConfirm.addEventListener('click', sendOrder)
 
 buttonGoBack.addEventListener('click', () => {
     const popUp = document.querySelector(".popup-container");
@@ -43,7 +44,6 @@ function totalPrice() {
 
 function checkOrderComplete() {
     if (order.food.name && order.drink.name && order.dessert.name) {
-        let sendButton = document.querySelector(".send");
         sendButton.disabled = false;
         sendButton.classList.add("active");
         return true;
