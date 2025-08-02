@@ -83,11 +83,11 @@ body {
     bottom: 2px;
     right: 20px;
     z-index: 1;
-    font-size: 2.2em;
+    font-size: 2em;
     opacity: 0.85;
-    color: red;
+    color: black;
     pointer-events: none;
-    animation: slide .9s infinite alternate;
+    animation: slide .8s infinite alternate;
     }
 
 .product {
